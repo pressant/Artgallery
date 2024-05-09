@@ -10,6 +10,7 @@ import About from "./Components/About";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
+import Arts from "./Components/Arts";
 import Portfolio from "./Components/Portfolio";
 
 import "./styles.css";
@@ -24,7 +25,7 @@ import "./styles.css";
  * If you don't have one of the social sites listed, leave it as an empty string.
  */
 const siteProps = {
-  name: "Alexandrie Grenier",
+  name: "Alexandra",
   title: "Web Designer & Content Creator",
   email: "alex@example.com",
   gitHub: "microsoft",
@@ -44,6 +45,7 @@ const App = () => {
       <Header />
       <Home name={siteProps.name} title={siteProps.title} />
       <About />
+      <Arts />
       <Portfolio />
       <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
     </div>

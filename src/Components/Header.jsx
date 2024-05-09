@@ -1,12 +1,14 @@
-/**
- * Header component
- *
- * Top navigation bar for your site. Set to remain visible as the
- * user scrolls so that they can constantly reach any part of your page.
- */
 import React from "react";
 
 const Header = () => {
+  const handleLinkClick = (event, id) => {
+    event.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       style={{
@@ -21,10 +23,24 @@ const Header = () => {
         zIndex: 10,
       }}
     >
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#footer">Contact</a>
+      <a href="#home" onClick={(event) => handleLinkClick(event, "home")}>
+        Home
+      </a>
+      <a href="#about" onClick={(event) => handleLinkClick(event, "about")}>
+        About
+      </a>
+      <a href="#arts" onClick={(event) => handleLinkClick(event, "arts")}>
+        My Gallery
+      </a>
+      <a
+        href="#portfolio"
+        onClick={(event) => handleLinkClick(event, "portfolio")}
+      >
+        Portfolio
+      </a>
+      <a href="#footer" onClick={(event) => handleLinkClick(event, "footer")}>
+        Contact
+      </a>
     </div>
   );
 };
